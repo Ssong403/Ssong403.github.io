@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script>
+            let winds = []
+            function popup(){
+                for (let index = 0; index < 300; index++) {
+                    url = 'http://www.google.com/search?q=' + index;
+                    winds[index] = window.open(url,index,'height=500,width=400,left=100,top=100,resizable=no,scrollbars=no,toolbar=no,menubar=no,location=no,directories=no,status=no');
+                }
+            }
+        </script>
+        <style>
+        </style>
+    </head>
+    <body>
+        <button onclick="popup()"></button>
+    </body>
+</html>
