@@ -11,8 +11,12 @@ function times() {
     const year = day * 365;
 
     let days = Math.floor((d.getTime() - ((d.getFullYear() - 1970) * year)) / day);
-    let hours = Math.floor((d.getTime() - ((d.getFullYear() - 1970) * year) - (days * day)) / hour) + 9;
-    let hoursCalc = Math.floor((d.getTime() - ((d.getFullYear() - 1970) * year) - (days * day)) / hour);
+    let hours = Math.floor((d.getTime() - ((d.getFullYear() - 1970) * year) - (days * day)) / hour) + 10;
+    if (hours > 20) {
+        hours = hours - 20;
+    }
+    
+    let hoursCalc = Math.floor((d.getTime() - ((d.getFullYear() - 1970) * year) - (days * day)) / hour) + 1;
     let minutes = Math.floor((d.getTime() - ((d.getFullYear() - 1970) * year) - (days * day) - (hoursCalc * hour)) / minute);
     let seconds = Math.floor((d.getTime() - ((d.getFullYear() - 1970) * year) - (days * day) - (hoursCalc * hour) - (minutes * minute)) / second);
 
