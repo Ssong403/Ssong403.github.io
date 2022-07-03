@@ -16,9 +16,10 @@ function times() {
         hours = hours - 20;
     }
     
-    let hoursCalc = Math.floor((d.getTime() - ((d.getFullYear() - 1970) * year) - (days * day)) / hour) + 1;
-    let minutes = Math.floor((d.getTime() - ((d.getFullYear() - 1970) * year) - (days * day) - (hoursCalc * hour)) / minute);
-    let seconds = Math.floor((d.getTime() - ((d.getFullYear() - 1970) * year) - (days * day) - (hoursCalc * hour) - (minutes * minute)) / second);
+    let hoursCalc = Math.floor((d.getTime() - ((d.getFullYear() - 1970) * year) - (days * day)) / hour);
+    let minutes = Math.floor((d.getTime() - ((d.getFullYear() - 1970) * year) - (days * day) - (hoursCalc * hour)) / minute) + 1;
+    let minutesCalc = Math.floor((d.getTime() - ((d.getFullYear() - 1970) * year) - (days * day) - (hoursCalc * hour)) / minute);
+    let seconds = Math.floor((d.getTime() - ((d.getFullYear() - 1970) * year) - (days * day) - (hoursCalc * hour) - (minutesCalc * minute)) / second);
 
     digital.innerHTML =  ('00' + hours).substr(-2) + ':' + ('00' + minutes).substr(-2) + ':' + ('000' + seconds).substr(-3);
 }
